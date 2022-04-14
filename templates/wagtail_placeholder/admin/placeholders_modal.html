@@ -1,0 +1,50 @@
+{% comment %}
+    This template is used in wagtail CMS
+{% endcomment %}
+<div id="placeholders-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="button close icon text-replace icon-cross" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="modal-body">
+
+                <header class="nice-padding merged tab-merged ">
+                    <div class="row">
+                        <div class="left">
+                            <div class="col">
+                                <h1 class="icon icon-doc-full-inverse">Choose a template tag</h1>
+                            </div>
+
+                            </div>
+                            <div class="right">
+                        </div>
+                    </div>
+                </header>
+
+                <div class="tab-content">
+                    <section id="search" class="active nice-padding">
+                        <div id="search-results" class="listing documents">
+                             <h2>Template Tags</h2>
+                             <table id="placeholders-listing" class="listing">
+                                 <thead>
+                                     <tr>
+                                        <th>Tag</th>
+                                        <th>Description</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                    {% for tag in tags %}
+                                    <tr data-tag="{{ tag.tag }}">
+                                        <td> {{ tag.tag }} </td>
+                                        <td> {{ tag.description }} </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                             </table>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
